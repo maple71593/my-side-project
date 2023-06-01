@@ -7,7 +7,8 @@ body{
 
 .header{
     width: 100%;
-    background: linear-gradient(to right ,#22b14c,#00942c);
+    min-width: 1200px;
+    background: linear-gradient(to right ,#22b14c,#5c6d61);
 } 
 
 .header-text{
@@ -289,8 +290,11 @@ font-weight: 100;
 
 .footer{
     width: 100%;
-    padding: 0px 200px;
+    min-width: 1200px;
     background: linear-gradient(-30deg,rgb(25, 41, 21),rgb(65, 170, 73),rgb(0, 184, 15));
+}
+.footer-width{
+    width: 1200px;
     display: flex;
     margin: auto;
     box-sizing: border-box;
@@ -322,6 +326,7 @@ font-weight: 100;
 }
 .end{
     width: 100%;
+    min-width: 1200px;
     height: 50px;
     background-color: rgb(0, 36, 16);
     color: aquamarine;
