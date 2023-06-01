@@ -76,6 +76,37 @@ body{
                 0px -15px 0px rgb(255, 255, 255);
 }
 
+.about{
+    width: 100%;
+    
+}
+.about-test{
+    width: 1200px;
+    padding: 30px;
+    margin: auto;
+    background-color: #34854c;
+    color: antiquewhite;
+}
+.about-mix-test{
+    text-align: center;
+}
+.about-mix-test img{
+    width: 100%;
+}
+
+.about-mix-test li{
+    text-align: left;
+    font-weight: 100;
+}
+.about-mix-test ul{
+    font-weight: 600;
+    text-align: left;
+}
+
+.about-strong{
+    text-align: left;
+}
+
 .content{
     width: 1210px;
     margin: auto;

@@ -11,28 +11,69 @@
 </head>
 
 <body>
-    <input type="checkbox" name="" id="menu-control">
-    <div class="header">
+    <div class="header" id="chg1">
         <div class=header-text> 
             <a href="index.html"><img style="height: 70px;" src="logo.png" alt="首頁"></a>
-            <label for="menu-control" class="menu-btn">
-                <span>選單</span>
-            </label>
             <nav>
                 <a href="index-yama.html">台灣的山林</a>
                 <a href="index-about.html">關於健行</a>
                 <a href="index-hiking-trail.html">適合健行的山</a>
                 <a href="#">會員資料</a>
-                <a href="#">關於我們</a>
+                <a onclick="change()" id="chg" href="#">深色模式</a>
             </nav>
         </div> 
     </div>
 
 
-        <div style="font-size: 300px;">
-            
 
+    <div class="about">
+        <div class="about-test">
+            <div class="about-mix-test">
+                <h1>健行與登山有什麼不同？</h1>
+                <h4>您走的路線是健行還是登山？不同之處讓我們一次說明白！</h4>
+                <p>登山和健行有很多相似處，而且這兩個詞也經常會互換使用。但是說到登山的時候，我們會聯想到一群體能優秀的人，帶著專業裝備並準備好攀登聖母峰。但登山不一定非要攀爬全世界最高峰，而且某條路線對有的人來說也許是健行，對其他人來說卻是登山。</p>
+                <p>不論您的行程是健行還是登山，只要行程定位正確，您就可以做好萬全準備。以下我們整理出幾個重要的不同之處。</p>
+                <img src="https://imgs.gvm.com.tw/upload/gallery/20220630/108610.jpg" alt="">
+            </div>
+            <hr>
+            <div class="about-mix-test">
+                <h1>登山與健行的不同</h1>
+                <p>與登山相較之下，<strong>健行</strong>多屬於天數較短的步行行程，而且步道都會有做過整理，或至少因為常有人走動而路徑明顯。這種步道不但方便行走，而且也容易辨識方向。健行可以是當天來回，也可以是多天行程，但通常可以沿途休息。</p>
+                <p><strong>登山</strong>大多是在野外，什麼都有可能。也許會有嚴峻的天候狀況，或是因高海拔或陡坡而有艱困的自然環境。這種行程的長度與天數都比健行長，而且每晚都要紮營、全天步行，在抵達目的地後才能休息。</p>
+                <img src="https://doqvf81n9htmm.cloudfront.net/data/alicelee_126/201809/0918/shutterstock_431252737.jpg" alt="">
+            </div>   
+            <hr>
+            <div class="about-mix-test">
+                <h1>健行：</h1>
+                <p><strong>條件與環境：</strong>輕鬆的長途步行旅程，沿途可以欣賞美麗的自然景觀。健行有的時候也會有難度，但有的地區設有不同難度等級的步道。</p>
+                <p><strong>所需時間：</strong>一天 5 至 7 小時，可能是一天，也可能是幾天。</p>
+                <p><strong>移動距離：</strong>3 至 50 公里 (2 至 30 英里)，不同步道有不同的難度等級。</p>
+                <ul>背包大小：
+                    <li>如果是當天來回，您需要 15 至 20 公升的背包，輕巧，並有許多隔層，方便輕鬆拿取物品。</li>
+                    <li>如果會過夜，建議使用 25 至 35 公升的背包，有透氣設計和加墊臀部綁帶，提供額外支撐。</li>
+                    <li>如果是多天行程，建議您使用 40 至 50 公升的背包，這樣才有更多空間可放置露營裝備和鍋具。請參閱我們的背包選擇指南，找到適合您行程安排的背包。</li>
+                </ul>
+                <ul>攜帶物品：
+                    <li>如果是當天來回，可以使用攻頂包攜帶飲水、食物和點心。</li>
+                    <li>如果需要過夜或天數較長，請攜帶較大的背包，方便放置額外衣物、食物、飲水、帳篷和睡袋。如果計畫紮營，然後會從營地出發健行，但是會在當天返回營地，您也可以選擇附有攻頂包的背包，這樣您就可以隨身攜帶必須用品並輕裝出發，不需要將整個大背包帶著走。</li>
+                </ul>
+                <img src="https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/article/201910/article-5db258a68b56e.jpg" alt="">
+            <hr>
+            <div class="about-mix-test">
+                <h1>登山：</h1>
+                <div class="about-strong">
+                    <p><strong>條件與環境：</strong>路途充滿挑戰性，可能必須穿過險惡的地形，還會遇到天候不佳、陡坡，甚至可能還會因位處高海拔而空氣稀薄。與大多數的步道不同，登山步道通常都是在野外，而且路徑不一定明顯。有的時候登山可能甚至需要事先經過訓練。</p>
+                    <p><strong>所需時間：</strong>走登山步道所需時間從一週到數週不等，沿途紮營住宿，並且必須到達目的地才算結束 (如果情況變得太過於艱難，當然也可以提早離開)。</p>
+                    <p><strong>移動距離：</strong>從 50 到 1,000 公里 (30 到 600 英里) 不等。舉例來說，步行前往尼泊爾聖母峰的基地營，來回步行大約 130 公里 (80 英里)，可能需時 14 天。有的登山步道可能每天必須步行約 10 公里 (6 英里)。</p>
+                    <p><strong>攜帶物品：</strong>由於身處野外，您必須依照當地的環境與氣候準備相關所需裝備。如果會下雪，可能須攜帶冰斧；如果是沙漠，就需要注意水分的補充。大多數登山的所需基本物品都相同：水、食物、烹煮器具、帳篷、睡袋、衣服、藥物、登山杖、指南針、衛星電話 (這是因為您將遠離城鎮)。</p>
+                    <p><strong>背包大小：</strong>建議選用 60 至 85 公升的背包，這樣才有足夠空間存放所有所需食物和衣物，以及烹煮器具、帳篷、睡袋等。建議選用的空包應為輕巧、具有良好透氣功能，且設有加墊臀部綁帶，減輕背部背負重物的壓力。請參閱我們的背包選擇指南，尋找適合您下次健行使用的背包款式。</p>
+                </div>
+                <img src="https://storage.googleapis.com/smiletaiwan-cms-cwg-tw/article/202012/article-5fe30ca6669a5.jpg" alt="">
+            </div>
+            </div>
         </div>
+        
+    </div>
 
 
 
@@ -40,38 +81,40 @@
 
 
         <div class="footer">
-            <div class="footer-page">
-                <h3>關於森林的沐浴</h3>
-                <nav>
-                    <a href="#" id="">網站目標</a>
-                    <a href="#" id="">爬山理念</a>
-                    <a href="#" id="">健康宗旨</a>
-                </nav>
-            </div>
-            <div class="footer-page">
-                <h3>關於台灣的森林</h3>
-                <nav>
-                    <a href="#" id="">台灣國家公園</a>
-                    <a href="#" id="">知名景點</a>
-                    <a href="#" id="">山友的回響</a>
-                    <a href="#" id="">山區小常識</a>
-                </nav>
-            </div>
-            <div class="footer-page">
-                <h3>關於更多的健行步道</h3>
-                <nav>
-                    <a href="#" id="">谷關七雄</a>
-                    <a href="#" id="">內湖三尖</a>
-                    <a href="#" id="">水雲三星</a>
-                    <a href="#" id="">武陵四秀</a>
-                    <a href="#" id="">五嶽</a>
-                </nav>
-            </div>
-            <div class="footer-page">
-                <h3>訂閱愛地球電子報</h3>
-                <div>
-                   <input type="text">
-                   <input type="submit" value="訂閱">
+            <div class="footer-width">
+                <div class="footer-page">
+                    <h3>關於森林的沐浴</h3>
+                    <nav>
+                        <a href="#" id="">網站目標</a>
+                        <a href="#" id="">爬山理念</a>
+                        <a href="#" id="">健康宗旨</a>
+                    </nav>
+                </div>
+                <div class="footer-page">
+                    <h3>關於台灣的森林</h3>
+                    <nav>
+                        <a href="#" id="">台灣國家公園</a>
+                        <a href="#" id="">知名景點</a>
+                        <a href="#" id="">山友的回響</a>
+                        <a href="#" id="">山區小常識</a>
+                    </nav>
+                </div>
+                <div class="footer-page">
+                    <h3>關於更多的健行步道</h3>
+                    <nav>
+                        <a href="#" id="">谷關七雄</a>
+                        <a href="#" id="">內湖三尖</a>
+                        <a href="#" id="">水雲三星</a>
+                        <a href="#" id="">武陵四秀</a>
+                        <a href="#" id="">五嶽</a>
+                    </nav>
+                </div>
+                <div class="footer-page">
+                    <h3>訂閱愛地球電子報</h3>
+                    <div>
+                    <input type="text">
+                    <input type="submit" value="訂閱">
+                    </div>
                 </div>
             </div>
         </div>
@@ -80,7 +123,7 @@
         </div>
         
 
-    <script type="script.js"></script>
+        <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
