@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h3>Ajax/XHR 網路連線實務</h3>
+    <button onclick="getData();">連線</button>
+    <div id="result"></div>
+    <script>
+        function getData(){
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                return response.json();
+            }).then(function(data){
+                let result=document.getElementById("result");
+                result.innerHTML=''
+                for(let i=0;i<data.length;i++){
+                    let product=data[i];
+                    result.innerHTML+="<div>"+product.name+","+product.price+","+product.description+"</div>";
+                }
+
+            });
+        }
+    </script>
 </body>
 </html>
