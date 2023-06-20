@@ -320,6 +320,26 @@ font-weight: 100;
     
 }
 
+.js-switch-pt{
+    width: 100%;
+}
+
+.js-switch-pt-2{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+}
+
+.js-change-pt{
+    
+}
+
+.js-change-pt img{
+    width: 1200px;
+    height: 720;
+
+}
+
 .footer{
     width: 100%;
     min-width: 1200px;

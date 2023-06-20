@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table,
+        .table tr,
+        .table tr td,
+        .table tr th {
+            border: 1px solid rebeccapurple;
+            padding: 5px;
+        }
+
+        .table {
+            width: auto;
+            margin: auto;
+        }
+
+        .checkbox {
+            width: 400px;
+            padding: 30px;
+            border: 1px solid rebeccapurple;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+            margin: auto;
+        }
+
+        .checkinbox {
+            padding: 10px;
+        }
+
+        .span-css {
+            padding: 3px;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <tr>
+            <th>姓名</th>
+            <th>生日(西元年)</th>
+            <th>E-mamil</th>
+            <th>刪除</th>
+        </tr>
+        <tr>
+            <td>王曉娟</td>
+            <td>1997/04/33</td>
+            <td>hore364489@gmail.com</td>
+            <td><a href="#">移除</a></td>
+        </tr>
+    </table>
+    <br>
+    <div class="checkbox">
+        <div class="checkinbox">
+            <span class="span-css">姓名:</span>
+            <input id="name-in" type="text">
+        </div>
+        <div class="checkinbox">
+            <span class="span-css">生日:</span>
+            <input id="bthdy-in" type="text" placeholder="請輸入西元年yyyy/mm/dd">
+        </div>
+        <div class="checkinbox">
+            <span class="span-css">E-mail:</span>
+            <input id="email-in" type="text" placeholder="請輸入E-mail">
+        </div>
+        <div>
+            <button id="btn">確認</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        // window.onload = function () {
+        //     // 取得具有類別名稱 '.table' 的元素
+        //     let table = document.querySelector('.table');
+            
+
+        //     // 為 '.table' 元素添加點擊事件監聽器
+        //     table.addEventListener('click', function (event) {
+        //         // 取得觸發事件的目標元素
+        //         let target = event.target;
+
+        //         // 檢查目標元素是否為 <a> 元素
+        //         if (target.tagName === 'A') {
+        //             // 取得目標元素的父層的父層元素 <tr>
+        //             let tr = target.parentNode.parentNode;
+        //             // 從文件中移除 <tr> 元素
+        //             tr.parentNode.removeChild(tr);
+        //         }
+        //     });
+        // };
+
+
+        window.onload = function () {
+            let btn = document.getElementById('btn');
+            let table = document.querySelector('.table');
+            let nameInput = document.getElementById('name-in');
+            let birthdayInput = document.getElementById('bthdy-in');
+            let emailInput = document.getElementById('email-in');
+
+            table.addEventListener('click', function (event) {
+                // 取得觸發事件的目標元素
+                let target = event.target;
+
+                // 檢查目標元素是否為 <a> 元素
+                if (target.tagName === 'A') {
+                    // 取得目標元素的父層的父層元素 <tr>
+                    let tr = target.parentNode.parentNode;
+                    // 從文件中移除 <tr> 元素
+                    tr.parentNode.removeChild(tr);
+                }
+            });
+
+            btn.addEventListener('click', function () {
+                let name = nameInput.value;
+                let birthday = birthdayInput.value;
+                let email = emailInput.value;
+
+                if (name && birthday && email) {
+                    let newRow = document.createElement('tr');
+
+                    let nameCell = document.createElement('td');
+                    nameCell.textContent = name;
+                    newRow.appendChild(nameCell);
+
+                    let birthdayCell = document.createElement('td');
+                    birthdayCell.textContent = birthday;
+                    newRow.appendChild(birthdayCell);
+
+                    let emailCell = document.createElement('td');
+                    emailCell.textContent = email;
+                    newRow.appendChild(emailCell);
+
+                    let deleteCell = document.createElement('td');
+                    let deleteLink = document.createElement('a');
+                    deleteLink.href = '#';
+                    deleteLink.textContent = '移除';
+                    deleteCell.appendChild(deleteLink);
+                    newRow.appendChild(deleteCell);
+
+                    table.appendChild(newRow);
+
+                    // 清空輸入框的值
+                    nameInput.value = '';
+                    birthdayInput.value = '';
+                    emailInput.value = '';
+                }
+            });
+        };
+    
+    </script>
+</body>
+
+</html>
