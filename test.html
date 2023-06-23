@@ -99,17 +99,19 @@
         //     });
         // };
 
-
-        window.onload = function () {
             let btn = document.getElementById('btn');
             let table = document.querySelector('.table');
             let nameInput = document.getElementById('name-in');
             let birthdayInput = document.getElementById('bthdy-in');
             let emailInput = document.getElementById('email-in');
-
+        window.onload = function () {
             table.addEventListener('click', function (event) {
                 // 取得觸發事件的目標元素
+                // 在事件處理程序中，target 是一個事件的屬性，用於獲取觸發事件的元素。
+                // 當事件被觸發時，event.target 將返回觸發該事件的元素。
+                // 這可以是直接點擊的元素，或者是該元素的子元素。
                 let target = event.target;
+                console.log(target)
 
                 // 檢查目標元素是否為 <a> 元素
                 if (target.tagName === 'A') {
@@ -121,15 +123,18 @@
             });
 
             btn.addEventListener('click', function () {
+                // 將表格內容變成變數
                 let name = nameInput.value;
                 let birthday = birthdayInput.value;
                 let email = emailInput.value;
 
                 if (name && birthday && email) {
+                    // .createElement 是創建新的HTML元素
                     let newRow = document.createElement('tr');
-
                     let nameCell = document.createElement('td');
+                    // 把輸入的內容新增到新的HTML元素中的內容 
                     nameCell.textContent = name;
+                    // .appendChild 從父元素中增添子元素
                     newRow.appendChild(nameCell);
 
                     let birthdayCell = document.createElement('td');
@@ -150,9 +155,9 @@
                     table.appendChild(newRow);
 
                     // 清空輸入框的值
-                    nameInput.value = '';
-                    birthdayInput.value = '';
-                    emailInput.value = '';
+                    // nameInput.value = '';
+                    // birthdayInput.value = '';
+                    // emailInput.value = '';
                 }
             });
         };

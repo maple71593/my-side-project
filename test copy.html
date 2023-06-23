@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table,
+        .table tr,
+        .table tr td,
+        .table tr th {
+            border: 1px solid rebeccapurple;
+            padding: 5px;
+        }
+
+        .table {
+            width: auto;
+            margin: auto;
+        }
+
+        .checkbox {
+            width: 400px;
+            padding: 30px;
+            border: 1px solid rebeccapurple;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+            margin: auto;
+        }
+
+        .checkinbox {
+            padding: 10px;
+        }
+
+        .span-css {
+            padding: 3px;
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <tr>
+            <th>姓名</th>
+            <th>生日(西元年)</th>
+            <th>E-mamil</th>
+            <th>刪除</th>
+        </tr>
+        <tr>
+            <td>王曉娟</td>
+            <td>1997/04/33</td>
+            <td>hore364489@gmail.com</td>
+            <td><a href="#">移除</a></td>
+        </tr>
+    </table>
+    <br>
+    <div class="checkbox">
+        <div class="checkinbox">
+            <span class="span-css">姓名:</span>
+            <input id="name-in" type="text">
+        </div>
+        <div class="checkinbox">
+            <span class="span-css">生日:</span>
+            <input id="bthdy-in" type="text" placeholder="請輸入西元年yyyy/mm/dd">
+        </div>
+        <div class="checkinbox">
+            <span class="span-css">E-mail:</span>
+            <input id="email-in" type="text" placeholder="請輸入E-mail">
+        </div>
+        <div>
+            <button id="btn">確認</button>
+        </div>
+
+    </div>
+
+    <script>
+        let btn = document.querySelector('#btn');
+        let table = document.querySelector('table');
+        let nameInput = document.getElementById('name-in');
+        let birthdayInput = document.getElementById('bthdy-in');
+        let emailInput = document.getElementById('email-in');
+
+        window.onload = ()=>{
+            btn.addEventListener('click',function(){
+                let name_vlaue = nameInput.value;
+                let birthday_vlue = birthdayInput.value;
+                let email_value = emailInput.value;
+
+            if(name_vlaue && birthday_vlue && email_value){
+                let new_tr = document.createElement('tr');
+
+                let new_name = document.createElement('td');
+                new_name.textContent = name_vlaue;
+                new_tr.appendChild(new_name);
+
+                let new_bthdy = document.createElement('td');
+                new_bthdy.textContent = birthday_vlue;
+                new_tr.appendChild(new_bthdy);
+
+                let new_email = document.createElement('td');
+                new_email.textContent = email_value;
+                new_tr.appendChild(new_email);
+
+                let new_del = document.createElement('td');
+                let new_a = document.createElement('a');
+                new_a.textContent = '移除';
+                new_a.href = "#";
+                new_del.appendChild(new_a);
+                new_tr.appendChild(new_del);
+                table.appendChild(new_tr);
+
+            }}
+            )
+            table.addEventListener('click',function(event){
+                let target = event.target;
+                console.log(target);
+                if(target.tagName === 'A'){
+                        let tr = target.parentNode.parentNode;
+                        tr.parentNode.removeChild(tr);
+                }
+            }
+
+            );
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" value="髮型">髮型
+        <input type="checkbox" value="上衣">上衣
+        <input type="checkbox" value="下衣">下衣
+        <input type="checkbox" value="手套">手套
+        <input type="checkbox" value="鞋子">鞋子
+        <input type="checkbox" value="武器">武器
+        <input type="checkbox" value="飾品">飾品
+    </div>
+    <div>
+        <button id="allcheck">全選</button>
+        <button id="black">反選</button>
+        <button id="check">確認</button>
+    </div>
+</body>
+
+<script>
+    let allcheck = document.getElementById('allcheck');
+    let black = document.getElementById('black');
+    let check = document.getElementById('check');
+
+
+    window.onload = () => {
+        let input = document.getElementsByTagName('input');
+        allcheck.onclick = () => {
+            console.log(input);
+            console.log(allcheck);
+            if (allcheck.innerHTML === '全選') {
+                for (const i in input) {
+                    input[i].checked = true;
+                } allcheck.innerHTML = '取消全選';
+            } else {
+                for (const i in input) {
+                    input[i].checked = false;
+                } allcheck.innerHTML = '全選';
+            }
+        };
+        black.onclick = () => {
+            for (const i in input) {
+                if (input[i].checked) {
+                    input[i].checked = false;
+                } else {
+                    input[i].checked = true;
+                }
+            }
+        };
+    }
+
+
+</script>
+
+</html>
