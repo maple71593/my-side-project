@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" value="髮型">髮型
+        <input type="checkbox" value="上衣">上衣
+        <input type="checkbox" value="下衣">下衣
+        <input type="checkbox" value="手套">手套
+        <input type="checkbox" value="鞋子">鞋子
+        <input type="checkbox" value="武器">武器
+        <input type="checkbox" value="飾品">飾品
+    </div>
+    <div>
+        <button id="allcheck">全選</button>
+        <button id="black">反選</button>
+        <button id="check">確認</button>
+    </div>
+</body>
+
+<script>
+    let allcheck = document.getElementById('allcheck');
+    let black = document.getElementById('black');
+    let check = document.getElementById('check');
+
+    window.onload = () => {
+        // 取得所有的 input 元素並轉換為陣列
+        let input = Array.from(document.getElementsByTagName('input'));
+        // console.log(input);
+
+        // 點擊事件處理器：全選/取消全選按鈕
+        allcheck.onclick = () => {
+            // 判斷是否為全選狀態
+            // ===是絕對判斷值，會先判斷allcheck.innerHTML是否等於'全選';然後返回布林值
+            // 最後再將 返回的布林值 變成變數
+            let isChecked = allcheck.innerHTML === '全選';
+            console.log(isChecked);
+
+            // 將所有複選框元素的選中狀態設定為 isChecked
+            input.forEach((value) => {
+                value.checked = isChecked;
+                // console.log(svalue);
+            });
+
+            // 更新全選按鈕的文字內容
+            //allcheck.innerHTML：取得 allcheck 元素的內容（即文字）
+            // isChecked ? '取消全選' : '全選'：這是條件運算子的部分
+            // isChecked 是一個布林值，表示是否選中（true）或未選中（false）
+            // ? 是條件運算子的分隔符號，用來判斷條件的真假
+            // '取消全選' 是當條件為真（true）時的結果
+            // : 是條件運算子的分隔符號，用來指定條件為假（false）時的結果
+            // '全選' 是當條件為假（false）時的結果
+            // 根據以上解釋，整體的意思是：
+            
+            // 如果 isChecked 為真（true），則將 allcheck 元素的內容設定為 '取消全選'
+            // 如果 isChecked 為假（false），則將 allcheck 元素的內容設定為 '全選'
+            // 換句話說，這行程式碼根據變數 isChecked 的值來決定要將 allcheck 元素的內容設定為 '取消全選' 還是 '全選'。
+            allcheck.innerHTML = isChecked ? '取消全選' : '全選';
+        };
+
+        // 點擊事件處理器：反選按鈕
+        black.onclick = () => {
+            // 對所有複選框元素進行反選操作
+            input.forEach((checkbox) => {
+                checkbox.checked = !checkbox.checked;
+            });
+        };
+    };
+
+
+</script>
+
+</html>
