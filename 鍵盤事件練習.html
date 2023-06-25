@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            position: relative;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <input type="text">
+    <script>
+      window.onload = () => {
+        let box = document.getElementById('box');
+        let position = { x: 0, y: 0 };
+    
+        document.onkeydown = (event) => {
+          let speed = 10;
+          switch (event.key) {
+            case "w":
+              position.y -= speed;
+              break;
+            case "s":
+              position.y += speed;
+              break;
+            case "a":
+              position.x -= speed;
+              break;
+            case "d":
+              position.x += speed;
+              break;
+            default:
+              break;
+          }
+          box.style.transform = `translate(${position.x}px, ${position.y}px)`;
+        };
+      };
+    </script>
+</body>
+
+</html>

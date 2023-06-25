@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貪食蛇</title>
+    <style>
+        #bughome {
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            background-color: rgb(155, 156, 156);
+            border: 10px solid rebeccapurple;
+            position: relative;
+        }
+
+        #snake {
+            width: 25px;
+            height: 25px;
+            background-color: brown;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bughome">
+        <div id="snake"></div>
+    </div>
+    <script>
+        let snake = document.getElementById('snake');
+        let home = document.getElementById('bughome');
+        let speed = 10;
+        let position = { x: 0, y: 0 };
+
+        window.onload = () => {
+            document.onkeydown = (event) => {
+                switch (event.key) {
+                    case 'w':
+                     position.y -= speed;
+                        break;
+                    case 's':
+                    position.y += speed;
+                        break;
+                    case 'a':
+                    position.x -= speed;
+                        break;
+                    case 'd':
+                    position.x += speed;
+                        break;
+
+                    default:
+                        break;
+                }
+                snake.style.transform = `translate(${position.x}px, ${position.y}px)`;
+                
+        };
+console.log([home]);
+    }
+    </script>
+</body>
+
+</html>
