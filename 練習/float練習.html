@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float練習</title>
+    <style>
+        .float-left{
+            float: left;
+        }
+        .float-right{
+            float: right;
+        }
+        .float-clear::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .overall{
+            width: 960px;
+            margin: auto;
+            background-color: blueviolet;
+            font-size: 0;
+            border: 1px solid ;
+        }
+
+          /* header */
+        .logo,.banner2{
+            width: 200px;
+            height: 80px;
+            background-color:red;
+            
+        }
+        .banner1{
+            width: 540px;
+            height: 80px;
+            background-color: rgb(188, 122, 122);
+            margin: 0 10px;
+        }
+        
+        /* 菜單 */
+        .bar{
+            width: 960px;
+            height: 50px;
+            background-color: rgb(17, 104, 75);
+            margin: 10px 0px;
+        }
+        /* 內容物box */
+        .box{
+            background-color: aqua;
+            margin: 5px;
+        }
+        .box1,.box2{
+            width: 370px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .box3,.box4,.box5,.box6{
+            width: 180px;
+            height: 200px;
+        }
+        .box7,.box8,.box9{
+            width: 200px;
+            height: 130px;
+            margin: 8px 0px;
+        }
+        /* 頁尾 */
+        .page-last{
+            width: 960px;
+            height: 60px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div class="overall">
+        <div class="header float-clear">
+            <div class="logo float-left">123</div>
+            <div class="banner1 float-left">123</div>
+            <div class="banner2 float-left">123</div>
+        </div>
+        <div class="bar"></div>
+        <div class="content float-clear">
+            <div class="float-left">
+                <div class="far-box1 float-clear">
+                    <div class="box box1 float-left">項目1</div>
+                    <div class="box box2 float-left">項目2</div>
+                </div>
+                <div class="far-box2">
+                    <div class="box box3 float-left">項目3</div>
+                    <div class="box box4 float-left">項目4</div>
+                    <div class="box box5 float-left">項目5</div>
+                    <div class="box box6 float-left">項目6</div>
+                </div>
+            </div>
+            <div class="far-box3  float-left">
+                <div class="box box7">項目7</div>
+                <div class="box box8">項目8</div>
+                <div class="box box9">項目9</div>
+            </div>
+        </div>
+        <div class="page-last">頁腳</div>
+    </div>
+</body>
+</html>
